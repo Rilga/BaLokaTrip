@@ -1,18 +1,19 @@
 KELOMPOK 5
 
-- Landing Page
-- Registrasi
-- Login
-- Home (Tampilan setelah login)
+- Landing Page (done)
+- Registrasi (done)
+- Login (done)
+- Home (Progress)
+- FAQ (done)
 - Favorit
 - Destinasi Popular
 - Artikel
 - Review dan Rating Pengunjung
 
 CRUD :
-- Tempat wisata
+- Tempat wisata (done)
 - Voucher Diskon
-- FAQ
+- FAQ (done)
 - foto atau video destinasi.
 - Review dan Rating Pengunjung
 - artikel
@@ -20,6 +21,6 @@ CRUD :
 INOVASI (KELOMPOK) : suara ketika tekan tombol save
 INOVASI :
 - ramalan cuaca
-- output peta
+- output peta (done)
 - fakta menarik tentang Bandung setiap kali pengguna login.
 - pengingat rencana wisata
