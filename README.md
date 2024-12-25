@@ -22,5 +22,6 @@ INOVASI (KELOMPOK) : suara ketika tekan tombol save
 INOVASI :
 - ramalan cuaca
 - output peta (done)
+- pencarian wisata (done)
 - fakta menarik tentang Bandung setiap kali pengguna login.
 - pengingat rencana wisata
