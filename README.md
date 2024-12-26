@@ -4,11 +4,11 @@ KELOMPOK 5
 - Registrasi (Done)
 - Login (Done)
 - Home (Progress)
+- Pesan Tiket (Progress)
 - FAQ (Done)
-- Pesan Tiket
+- Artikel
 - Favorit
 - Destinasi Popular
-- Artikel
 - Review dan Rating Pengunjung
 
 CRUD :
@@ -22,7 +22,7 @@ CRUD :
 
 INOVASI (KELOMPOK) : suara ketika tekan tombol save
 INOVASI :
-- ramalan cuaca
 - output peta (done)
 - pencarian wisata (done)
 - pengingat rencana wisata
+- ramalan cuaca
