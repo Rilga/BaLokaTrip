@@ -6,7 +6,7 @@ KELOMPOK 5
 - Home (Progress)
 - Pesan Tiket (Progress)
 - FAQ (Done)
-- Artikel
+- Artikel (Done)
 - Favorit
 - Destinasi Popular
 - Review dan Rating Pengunjung
@@ -16,7 +16,7 @@ CRUD :
 - Tiket (Done) (Tinggal Tampilin di User)
 - Voucher Diskon
 - FAQ (Done)
-- artikel
+- artikel (Done)
 - foto atau video destinasi.
 - Review dan Rating Pengunjung
 
