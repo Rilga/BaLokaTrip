@@ -3,8 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ArticleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +28,9 @@ Route::middleware(['auth','userMiddleware'])->group(function(){
     Route::get('dashboard',[UserController::class,'index'])->name('dashboard');
     Route::get('/dashboard', [ProductController::class, 'index2'])->name('dashboard');
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('show');
+    Route::get('article',[ArticleController::class,'index2'])->name('user.article');
+    Route::get('/articles', [ArticleController::class, 'index3'])->name('articles');
+    Route::get('/articles/{id}', [ArticleController::class, 'show2'])->name('articles.show');
 
 });
 
@@ -41,6 +46,13 @@ Route::middleware(['auth','adminMiddleware'])->group(function(){
     Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.Products.edit');
     Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.products.update');
     Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.Products.destroy');
+    // CRUD Article
+    Route::get('/admin/article', [ArticleController::class, 'index'])->name('admin.article');
+    Route::get('/admin/article/create', [ArticleController::class, 'create'])->name('admin.article.create');
+    Route::post('/admin/article', [ArticleController::class, 'store'])->name('admin.article.store');
+    Route::get('/admin/article/{id}/edit', [ArticleController::class, 'edit'])->name('admin.article.edit');
+    Route::put('/admin/article/{id}', [ArticleController::class, 'update'])->name('admin.article.update');
+    Route::delete('/admin/article/{id}', [ArticleController::class, 'destroy'])->name('admin.article.destroy');
 
 });
 
