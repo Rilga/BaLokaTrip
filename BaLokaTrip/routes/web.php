@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\FavoriteController;
@@ -31,7 +32,7 @@ Route::middleware(['auth','userMiddleware'])->group(function(){
     Route::get('article',[ArticleController::class,'index2'])->name('user.article');
     Route::get('/articles', [ArticleController::class, 'index3'])->name('articles');
     Route::get('/articles/{id}', [ArticleController::class, 'show2'])->name('articles.show');
-
+    Route::get('/faq', [FaqController::class, 'index2'])->name('faq');
 });
 
 // admin routes
@@ -61,6 +62,14 @@ Route::middleware(['auth','adminMiddleware'])->group(function(){
     Route::get('/admin/tickets/{ticket}/edit', [TicketController::class, 'edit'])->name('admin.tickets.edit');
     Route::put('/admin/tickets/{ticket}', [TicketController::class, 'update'])->name('admin.tickets.update');
     Route::delete('/admin/tickets/{ticket}', [TicketController::class, 'destroy'])->name('admin.tickets.destroy');
+
+    // CRUD FAQ
+    Route::get('/admin/faq', [FaqController::class, 'index'])->name('admin.faq');
+    Route::get('/admin/faqs/create', [FaqController::class, 'create'])->name('admin.faq.create');
+    Route::post('/admin/faqs', [FaqController::class, 'store'])->name('admin.faq.store');
+    Route::get('/admin/faqs/{id}/edit', [FaqController::class, 'edit'])->name('admin.faq.edit');
+    Route::put('/admin/faqs/{id}', [FaqController::class, 'update'])->name('admin.faq.update');
+    Route::delete('/admin/faqs/{id}', [FaqController::class, 'destroy'])->name('admin.faq.destroy');
 });
 
 
