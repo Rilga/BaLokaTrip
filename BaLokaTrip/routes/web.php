@@ -22,8 +22,10 @@ require __DIR__.'/auth.php';
 // user routes
 Route::middleware(['auth','userMiddleware'])->group(function(){
     
+    // Pemanggilan Content
     Route::get('dashboard',[UserController::class,'index'])->name('dashboard');
-    Route::get('favorite',[FavoriteController::class,'index'])->name('user.favorite');
+    Route::get('/dashboard', [ProductController::class, 'index2'])->name('dashboard');
+    Route::get('/products/{id}', [ProductController::class, 'show'])->name('show');
 
 });
 
@@ -32,4 +34,15 @@ Route::middleware(['auth','adminMiddleware'])->group(function(){
     
     Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
 
+    // CRUD Wisata
+    Route::get('/admin/product',[ProductController::class,'index'])->name('admin.product');
+    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin.Products.create');
+    Route::post('/admin/products', [ProductController::class, 'store'])->name('admin.products.store');;
+    Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.Products.edit');
+    Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.Products.destroy');
+
 });
+
+
+
