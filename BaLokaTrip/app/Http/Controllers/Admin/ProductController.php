@@ -19,6 +19,7 @@ class ProductController extends Controller
         $products = Product::all();
         return view('dashboard', compact('products'));
     }
+
     public function index3(Request $request)
     {
         $search = $request->input('search');

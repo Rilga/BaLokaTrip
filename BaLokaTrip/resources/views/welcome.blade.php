@@ -263,11 +263,6 @@
     <br><br><br><br>
 </section>
 
-
-
-
-
-
 <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 490" xmlns="http://www.w3.org/2000/svg"
     class="transition duration-300 ease-in-out delay-150">
     <path

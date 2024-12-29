@@ -94,7 +94,6 @@
     </div>
 
     <br><br><br>
-
     <!-- Search Form -->
     <form method="GET" action="{{ route('dashboard') }}" class="d-flex align-items-center">
         <div class="input-group w-50 mx-auto">
@@ -108,7 +107,6 @@
             </button>
         </div>
     </form>
-    
     {{-- tampilan wisata --}}
     <div class="container py-5">
         <div class="text-center mb-4">

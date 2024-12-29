@@ -19,6 +19,12 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+
+    public function getRandomFact($facts)
+    {
+        // Mengambil fakta acak dari array
+        return $facts[array_rand($facts)];
+    }
     /**
      * Handle an incoming authentication request.
      */

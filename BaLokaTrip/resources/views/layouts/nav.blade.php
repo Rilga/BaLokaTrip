@@ -5,11 +5,10 @@
             <div class="flex">
                 {{-- logo --}}
                 <div class="shrink-0 flex items-center">
-                    <a href="{{url('/')}}">
-                        <x-application-logo class="block h-9 w-auto fill-current" />
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('images/logo2.svg') }}" alt="Logo" class="block h-6 w-auto">
                     </a>
                 </div>
-
 
                 {{-- navigation links --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
