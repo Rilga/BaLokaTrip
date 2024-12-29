@@ -54,6 +54,13 @@ Route::middleware(['auth','adminMiddleware'])->group(function(){
     Route::put('/admin/article/{id}', [ArticleController::class, 'update'])->name('admin.article.update');
     Route::delete('/admin/article/{id}', [ArticleController::class, 'destroy'])->name('admin.article.destroy');
 
+    // CRUD Ticket
+    Route::get('/admin/ticket', [TicketController::class, 'index'])->name('admin.ticket');
+    Route::get('/admin/tickets/create', [TicketController::class, 'create'])->name('admin.tickets.create');
+    Route::post('/admin/tickets', [TicketController::class, 'store'])->name('admin.tickets.store');
+    Route::get('/admin/tickets/{ticket}/edit', [TicketController::class, 'edit'])->name('admin.tickets.edit');
+    Route::put('/admin/tickets/{ticket}', [TicketController::class, 'update'])->name('admin.tickets.update');
+    Route::delete('/admin/tickets/{ticket}', [TicketController::class, 'destroy'])->name('admin.tickets.destroy');
 });
 
 
