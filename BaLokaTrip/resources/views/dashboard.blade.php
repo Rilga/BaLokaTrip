@@ -94,6 +94,21 @@
     </div>
 
     <br><br><br>
+
+    <!-- Search Form -->
+    <form method="GET" action="{{ route('dashboard') }}" class="d-flex align-items-center">
+        <div class="input-group w-50 mx-auto">
+            <!-- Icon Pencarian -->
+            <span class="input-group-text" id="search-icon">
+                <i class="bi bi-search"></i> <!-- Ikon pencarian dari Bootstrap Icons -->
+            </span>
+            <input type="text" name="search" class="form-control" placeholder="Cari Destinasi Wisata anda..." value="{{ $search ?? '' }}" aria-describedby="search-icon">
+            <button type="submit" class="btn btn-primary">
+                Cari
+            </button>
+        </div>
+    </form>
+    
     {{-- tampilan wisata --}}
     <div class="container py-5">
         <div class="text-center mb-4">
