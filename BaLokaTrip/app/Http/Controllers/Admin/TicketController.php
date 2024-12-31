@@ -9,10 +9,45 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $tickets = Ticket::with('product')->get(); // Ambil semua tiket dengan data produk terkait
-        return view('admin.ticket', compact('tickets'));
+        // Ambil input dari search bar
+    $search = $request->input('search');
+
+    // Query tiket dengan relasi 'product' dan pencarian
+    $tickets = Ticket::with('product') // Load relasi 'product'
+        ->when($search, function ($query, $search) {
+            $query->where('name', 'like', "%{$search}%") // Filter berdasarkan nama tiket
+                ->orWhereHas('product', function ($q) use ($search) {
+                      $q->where('name', 'like', "%{$search}%"); // Filter berdasarkan nama produk terkait
+                });
+        })
+        ->paginate(10); // Pagination
+
+    // Map tiket untuk menambahkan properti 'product_name'
+    $tickets->getCollection()->transform(function ($ticket) {
+        $ticket->product_name = $ticket->product ? $ticket->product->name : 'No product';
+        return $ticket;
+    });
+
+    return view('admin.ticket', compact('tickets'));
+    }
+
+    public function index2()
+    {
+        // Ambil tiket beserta produk yang terkait
+        $tickets = Ticket::with('product')->get();
+
+        // Menambahkan nama produk, gambar produk, nama tiket, dan harga tiket untuk setiap tiket
+        $ticketsWithProductDetails = $tickets->map(function ($ticket) {
+            $ticket->product_name = $ticket->product ? $ticket->product->name : 'No product';
+            $ticket->product_image = $ticket->product ? $ticket->product->image : null;
+            $ticket->ticket_name = $ticket->name; // Nama tiket
+            $ticket->ticket_price = $ticket->price; // Harga tiket
+            return $ticket;
+        });
+
+        return view('ticket', compact('ticketsWithProductDetails'));
     }
 
     public function create()

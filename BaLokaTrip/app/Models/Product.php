@@ -16,6 +16,6 @@ class Product extends Model
 
     public function ticket()
     {
-        return $this->hasMany(Ticket::class); // Relasi ke model Ticket
+        return $this->hasMany(Ticket::class);
     }
 }

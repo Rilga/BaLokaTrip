@@ -9,10 +9,33 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function index()
+    /**
+     * Display a listing of the products.
+     *
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
+    public function show2($id)
     {
-        $products = Product::all();
-        return view('admin.product', compact('products'));
+        $product = Product::findOrFail($id); // Find product by ID
+        return view('tiket.show', compact('product')); // Return the show view with product data
+    }
+
+    public function index(Request $request)
+    {
+        $search = $request->input('search');
+    \Log::info("Search query: {$search}");
+
+    // Query database untuk mendapatkan produk dengan pencarian
+    $products = Product::when($search, function ($query, $search) {
+        return $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+    })->paginate(10);
+
+    \Log::info("Products found: " . $products->total());
+
+    // Kirim data produk ke view
+    return view('admin.product', compact('products'));
     }
     public function index2()
     {

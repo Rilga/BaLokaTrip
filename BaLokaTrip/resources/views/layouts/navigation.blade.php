@@ -40,6 +40,10 @@
                         {{ __('Category') }}
                     </x-nav-link>
 
+                    <x-nav-link href="admin/discount" :active=" request()->routeIs('admin.discount')">
+                        {{ __('Discount') }}
+                    </x-nav-link>
+
                     <x-nav-link href="admin/user" :active=" request()->routeIs('admin.user')">
                         {{ __('User') }}
                     </x-nav-link>
@@ -49,8 +53,8 @@
                     {{-- user links --}}
 
                     @if (Auth::user()->usertype == 'user')
-                    <x-nav-link href="book" :active=" request()->routeIs('user.book')">
-                        {{ __('Book') }}
+                    <x-nav-link href="ticket" :active=" request()->routeIs('user.ticket')">
+                        {{ __('Tiket') }}
                     </x-nav-link>
 
                     <x-nav-link href="favorite" :active=" request()->routeIs('user.favorite')">
@@ -63,10 +67,6 @@
 
                     <x-nav-link href="faq" :active=" request()->routeIs('user.faq')">
                         {{ __('Faq') }}
-                    </x-nav-link>
-
-                    <x-nav-link href="profile" :active=" request()->routeIs('profile.edit')">
-                        {{ __('My Profile') }}
                     </x-nav-link>
                     @endif
 

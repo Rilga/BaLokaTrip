@@ -251,7 +251,7 @@
                 </div>
                 <div class="col-md-5">
                     <figure class="image-container">
-                        <img src="{{ asset('images/s3.jpg') }}" class="featurette-image img-fluid mx-auto rounded" alt="Feature 3" style="box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+                        <img src="{{ asset('images/s3.jpg') }}" class="featurette-image img-fluid mx-auto rounded" alt="Feature 3" style="box-shadow: 0px 4px 10px rgba(0,0,0,0.2); ">
                         <figcaption class="text-center mt-2">Cikahuripan Lembang</figcaption>
                     </figure>
                 </div>
