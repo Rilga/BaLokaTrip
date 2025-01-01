@@ -5,9 +5,6 @@ KELOMPOK 5
 - Login (Done)
 - Home (Progress)
 - Pesan Tiket (Progress)
-- Favorit
-- Destinasi Popular
-- Review dan Rating Pengunjung
 
 CRUD :
 - Tempat wisata (Done)
