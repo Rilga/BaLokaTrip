@@ -18,7 +18,7 @@ CRUD :
 - foto atau video destinasi.
 
 
-INOVASI (KELOMPOK) : suara ketika tekan tombol save
+INOVASI (KELOMPOK) : Checkout Tiket
 INOVASI :
 - output peta (done)
 - pencarian wisata (done)
