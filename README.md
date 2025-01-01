@@ -24,5 +24,5 @@ INOVASI :
 - pencarian wisata (done)
 - pencarian tiket (done)
 - video section (done)
-- pengingat rencana wisata
+- Dark mode (done)
 - ramalan cuaca
