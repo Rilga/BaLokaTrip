@@ -3,7 +3,7 @@ KELOMPOK 5
 - Landing Page (Done)
 - Registrasi (Done)
 - Login (Done)
-- Home (Progress)
+- Home (Done)
 - Pesan Tiket (Progress)
 
 CRUD :
@@ -12,7 +12,7 @@ CRUD :
 - Voucher Diskon (Done)
 - FAQ (Done)
 - artikel (Done)
-- foto atau video destinasi.
+- event (Done)
 
 
 INOVASI (KELOMPOK) : Checkout Tiket
@@ -23,3 +23,4 @@ INOVASI :
 - video section (done)
 - dark mode (done)
 - visualisasi data user yang sudah regis (done)
+- download article as pdf (done)
