@@ -4,7 +4,7 @@ KELOMPOK 5
 - Registrasi (Done)
 - Login (Done)
 - Home (Done)
-- Pesan Tiket (Progress)
+- Pesan Tiket (Done)
 
 CRUD :
 - Tempat wisata (Done)
@@ -15,12 +15,12 @@ CRUD :
 - event (Done)
 
 
-INOVASI (KELOMPOK) : Checkout Tiket
+INOVASI (KELOMPOK) : Checkout Tiket (Done)
 INOVASI :
-- output peta (done)
-- pencarian wisata (done)
-- pencarian tiket (done)
-- video section (done)
-- dark mode (done)
-- visualisasi data user yang sudah regis (done)
-- download article as pdf (done)
+- output peta (Done)
+- pencarian wisata (Done)
+- pencarian tiket (Done)
+- video section (Done)
+- dark mode (Done)
+- visualisasi data user yang sudah regis (Done)
+- download article as pdf (Done)
