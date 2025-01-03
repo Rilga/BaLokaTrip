@@ -25,22 +25,29 @@
 
         <style>
             body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
 
-.min-h-screen {
-    margin: 0;
-    padding: 0;
-}
-header {
-    margin: 0;
-    padding: 0;
-    height: 0; /* If no content in header */
-}
+        .min-h-screen {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            margin: 0;
+            padding: 0;
+            height: 0; /* If no content in header */
+        }
 
+        body {
+            filter: invert(95%) hue-rotate(180deg);
+        }
+
+        img, video, iframe {
+            filter: none !important;
+        }
         </style>
     </head>
     <body class="font-sans antialiased">
@@ -60,6 +67,17 @@ header {
             <main>
                 {{ $slot }}
             </main>
+            <script type="module" src="/nightowl.js"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script>
+            <script type="module">
+                import { createNightowl } from '@bufferhead/nightowl'
+            
+                createNightowl({
+                    defaultMode: 'dark',
+                    toggleButtonMode: 'newState'
+                })
+            </script>
+            
         </div>
         @include('layouts.footer')
     </body>

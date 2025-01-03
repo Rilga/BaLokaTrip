@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 {{-- logo --}}
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center nightowl-daylight">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('images/logo2.svg') }}" alt="Logo" class="block h-6 w-auto">
                     </a>
@@ -15,10 +15,6 @@
 
                     <x-nav-link :href="url('/')" :active=" request()->routeIs('home')">
                         {{ __('Home') }}
-                    </x-nav-link>
-
-                    <x-nav-link :href="url('/services')" :active=" request()->routeIs('services')">
-                        {{ __('Services') }}
                     </x-nav-link>
 
                     <x-nav-link :href="url('/about')" :active=" request()->routeIs('about')">
@@ -65,10 +61,6 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="url('/')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
-            </x-responsive-nav-link>
-
-            <x-responsive-nav-link :href="url('/services')" :active=" request()->routeIs('services')">
-                {{ __('Services') }}
             </x-responsive-nav-link>
 
             <x-responsive-nav-link :href="url('/about')" :active=" request()->routeIs('about')">
