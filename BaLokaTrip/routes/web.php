@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\EventController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -96,4 +97,13 @@ Route::middleware(['auth','adminMiddleware'])->group(function(){
     Route::get('/admin/discount/{discount}/edit', [DiscountController::class, 'edit'])->name('discounts.edit');
     Route::put('/admin/discount/{discount}', [DiscountController::class, 'update'])->name('discounts.update');
     Route::delete('/admin/discount/{discount}', [DiscountController::class, 'destroy'])->name('discounts.destroy');
+    
+    // Event CRUD
+    Route::get('/admin/event', [EventController::class, 'index'])->name('admin.event');
+    Route::get('/admin/events/create', [EventController::class, 'create'])->name('admin.events.create');
+    Route::post('/admin/event', [EventController::class, 'store'])->name('admin.events.store');
+    Route::get('/admin/events/{id}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
+    Route::put('/admin/events/{id}', [EventController::class, 'update'])->name('admin.events.update');
+    Route::delete('/admin/events/{id}', [EventController::class, 'destroy'])->name('admin.events.destroy');
+
 });
