@@ -17,7 +17,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <style>
+        body {
+            filter: invert(95%) hue-rotate(180deg);
+        }
+        img, video, iframe {
+            filter: none !important;
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
     
@@ -30,7 +37,16 @@
     {{-- script --}}
     @yield('script')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script type="module" src="/nightowl.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script>
+    <script type="module">
+        import { createNightowl } from '@bufferhead/nightowl'
+    
+        createNightowl({
+            defaultMode: 'dark',
+            toggleButtonMode: 'newState'
+        })
+    </script>
     @include('layouts.footer')
 </body>
 </html>

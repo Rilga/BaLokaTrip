@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Discount;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Discount;
 
 class DiscountController extends Controller
 {
@@ -14,7 +14,7 @@ class DiscountController extends Controller
         return view('admin.discount', compact('discounts'));
     }
 
-    public function create()    
+    public function create()
     {
         return view('admin.discounts.create');
     }
@@ -22,39 +22,42 @@ class DiscountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|unique:discounts,code',
+            'code' => 'required|unique:discounts',
             'percentage' => 'nullable|numeric|min:0|max:100',
             'fixed_amount' => 'nullable|numeric|min:0',
             'valid_from' => 'nullable|date',
-            'valid_until' => 'nullable|date',
+            'valid_until' => 'nullable|date|after_or_equal:valid_from',
         ]);
 
         Discount::create($request->all());
-        return redirect()->route('admin.discount')->with('success', 'Diskon berhasil ditambahkan!');
+        return redirect()->route('admin.discount')->with('success', 'Discount created successfully!');
     }
 
-    public function edit(Discount $discount)
+    public function edit($id)
     {
+        $discount = Discount::findOrFail($id);
         return view('admin.discounts.edit', compact('discount'));
     }
 
-    public function update(Request $request, Discount $discount)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'code' => 'required|unique:discounts,code,' . $discount->id,
+            'code' => 'required|unique:discounts,code,' . $id,
             'percentage' => 'nullable|numeric|min:0|max:100',
             'fixed_amount' => 'nullable|numeric|min:0',
             'valid_from' => 'nullable|date',
-            'valid_until' => 'nullable|date',
+            'valid_until' => 'nullable|date|after_or_equal:valid_from',
         ]);
 
+        $discount = Discount::findOrFail($id);
         $discount->update($request->all());
-        return redirect()->route('admin.discount')->with('success', 'Diskon berhasil diperbarui!');
+        return redirect()->route('admin.discount')->with('success', 'Discount updated successfully!');
     }
 
-    public function destroy(Discount $discount)
+    public function destroy($id)
     {
+        $discount = Discount::findOrFail($id);
         $discount->delete();
-        return redirect()->route('admin.discount')->with('success', 'Diskon berhasil dihapus!');
+        return redirect()->route('admin.discount')->with('success', 'Discount deleted successfully!');
     }
 }

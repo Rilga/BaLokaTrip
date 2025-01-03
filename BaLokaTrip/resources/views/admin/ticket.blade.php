@@ -2,7 +2,7 @@
     <x-slot name="header">
     </x-slot>
     <!-- Background biru -->
-    <div class="py-12 bg-blue-700 min-h-screen">
+    <div class="py-12 min-h-screen" style="background-color: #cee2ec;">
         <br><br><br>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -23,14 +23,14 @@
                             >
                             <button 
                                 type="submit" 
-                                class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
+                                class="nightowl-daylight ml-2 px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600">
                                 Cari
                             </button>
                         </form>
                     
                         <!-- Tombol tambah tiket -->
                         <a href="{{ route('admin.tickets.create') }}" 
-                            class="ml-4 inline-flex items-center px-4 py-2 rounded-md shadow-md text-white bg-purple-600 hover:bg-purple-700 transition-transform transform hover:scale-105">
+                            class="nightowl-daylight ml-4 inline-flex items-center px-4 py-2 rounded-md shadow-md text-white bg-purple-600 hover:bg-purple-700 transition-transform transform hover:scale-105">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                             </svg>
@@ -60,17 +60,17 @@
                                             <td class="px-6 py-4">Rp{{ number_format($ticket->price, 0, ',', '.') }}</td>
                                             <td class="px-6 py-4">
                                                 @if ($ticket->stock > 10)
-                                                    <span class="inline-block px-3 py-1 bg-green-200 text-green-700 text-xs font-semibold rounded-md">Cukup</span>
+                                                    <span class="nightowl-daylight inline-block px-3 py-1 bg-green-200 text-green-700 text-xs font-semibold rounded-md">Cukup</span>
                                                 @elseif ($ticket->stock > 0 && $ticket->stock <= 10)
-                                                    <span class="inline-block px-3 py-1 bg-yellow-200 text-yellow-700 text-xs font-semibold rounded-md">Hampir Habis</span>
+                                                    <span class="nightowl-daylight inline-block px-3 py-1 bg-yellow-200 text-yellow-700 text-xs font-semibold rounded-md">Hampir Habis</span>
                                                 @else
-                                                    <span class="inline-block px-3 py-1 bg-red-200 text-red-700 text-xs font-semibold rounded-md">Habis</span>
+                                                    <span class="nightowl-daylight inline-block px-3 py-1 bg-red-200 text-red-700 text-xs font-semibold rounded-md">Habis</span>
                                                 @endif
                                             </td>
                                             <td class="px-6 py-4 flex justify-start space-x-4">
                                                 <!-- Edit Button -->
                                                 <a href="{{ route('admin.tickets.edit', $ticket->id) }}" 
-                                                    class="inline-flex items-center px-4 py-2 text-white rounded-md shadow-md bg-green-500 hover:bg-green-600 transition-transform transform hover:scale-105"
+                                                    class="nightowl-daylight inline-flex items-center px-4 py-2 text-white rounded-md shadow-md bg-green-500 hover:bg-green-600 transition-transform transform hover:scale-105"
                                                     title="Edit Tiket">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 mr-2">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232a4.5 4.5 0 11-6.364 6.364A5.002 5.002 0 005 12v5a1 1 0 001 1h4a1 1 0 001-1v-2h2v2a1 1 0 001 1h4a1 1 0 001-1v-5a5.002 5.002 0 00-4.868-5.232z" />
@@ -82,7 +82,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" 
-                                                            class="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-md shadow-md hover:bg-red-700 transition-transform transform hover:scale-105"
+                                                            class="nightowl-daylight inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-md shadow-md hover:bg-red-700 transition-transform transform hover:scale-105"
                                                             title="Hapus Tiket">
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5 mr-2">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />

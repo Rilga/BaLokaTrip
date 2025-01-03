@@ -2,7 +2,7 @@
     <x-slot name="header">
     </x-slot>
     <!-- Background biru -->
-    <div class="py-12 bg-blue-700 min-h-screen">
+    <div class="py-12 min-h-screen" style="background-color: #cee2ec;">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <br><br><br>
             <div class="bg-white shadow-lg rounded-lg p-6">

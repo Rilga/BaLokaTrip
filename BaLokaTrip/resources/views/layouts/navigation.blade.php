@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center nightowl-daylight">
                     <a href="{{ Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('dashboard') }}">
                         <img src="{{ asset('images/logo2.svg') }}" alt="Logo" class="block h-6 w-auto">
                     </a>
@@ -16,12 +16,12 @@
                     <x-nav-link :href="Auth::user()->usertype == 'admin' ? route('admin.dashboard') : route('dashboard')" :active="Auth::user()->usertype == 'admin' ? request()->routeIs('admin.dashboard') : request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
-
+                    
                     {{-- admin links --}}
 
                     @if (Auth::user()->usertype == 'admin')
                     <x-nav-link href="{{ route('admin.product') }}" :active=" request()->routeIs('admin.product')">
-                        {{ __('Product') }}
+                        {{ __('Wisata') }}
                     </x-nav-link>
 
                     <x-nav-link href="{{ route('admin.ticket') }}" :active=" request()->routeIs('admin.ticket')">
@@ -36,16 +36,16 @@
                         {{ __('Faq') }}
                     </x-nav-link>
 
-                    <x-nav-link href="admin/category" :active=" request()->routeIs('admin.category')">
-                        {{ __('Category') }}
-                    </x-nav-link>
-
-                    <x-nav-link href="admin/discount" :active=" request()->routeIs('admin.discount')">
+                    <x-nav-link href="{{ route('admin.discount') }}" :active="request()->routeIs('admin.discount')">
                         {{ __('Discount') }}
                     </x-nav-link>
 
-                    <x-nav-link href="admin/user" :active=" request()->routeIs('admin.user')">
-                        {{ __('User') }}
+                    <x-nav-link href="{{ route('admin.event') }}" :active=" request()->routeIs('admin.event')">
+                        {{ __('Acara') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('admin.visual') }}" :active=" request()->routeIs('admin.visual')">
+                        {{ __('Visualisasi') }}
                     </x-nav-link>
                     @endif
 
@@ -53,21 +53,30 @@
                     {{-- user links --}}
 
                     @if (Auth::user()->usertype == 'user')
-                    <x-nav-link href="ticket" :active=" request()->routeIs('user.ticket')">
+                    <x-nav-link href="/ticket" :active=" request()->routeIs('user.ticket')">
                         {{ __('Tiket') }}
                     </x-nav-link>
 
-                    <x-nav-link href="favorite" :active=" request()->routeIs('user.favorite')">
-                        {{ __('Favorite') }}
+                    <x-nav-link href="/event" :active=" request()->routeIs('user.event')">
+                        {{ __('Event') }}
                     </x-nav-link>
 
-                    <x-nav-link href="article" :active=" request()->routeIs('user.article')">
+                    <x-nav-link href="/article" :active=" request()->routeIs('user.article')">
                         {{ __('Article') }}
                     </x-nav-link>
 
-                    <x-nav-link href="faq" :active=" request()->routeIs('user.faq')">
+                    <x-nav-link href="/faq" :active=" request()->routeIs('user.faq')">
                         {{ __('Faq') }}
                     </x-nav-link>
+
+                    <x-nav-link href="{{ route('checkout.riwayatpesanan') }}" :active=" request()->routeIs('checkout.riwayatpesanan')">
+                        {{ __('Riwayat') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="/about" :active=" request()->routeIs('about')">
+                        {{ __('About') }}
+                    </x-nav-link>
+
                     @endif
 
                 </div>
@@ -134,7 +143,7 @@
 
             @if (Auth::user()->usertype == 'admin')
             <x-responsive-nav-link href="{{ route('admin.product') }}" :active=" request()->routeIs('admin.product')">
-                {{ __('Product') }}
+                {{ __('Wisata') }}
             </x-responsive-nav-link>
 
             <x-responsive-nav-link href="{{ route('admin.ticket') }}" :active=" request()->routeIs('admin.ticket')">
@@ -149,12 +158,16 @@
                 {{ __('Faq') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="admin/category" :active=" request()->routeIs('admin.category')">
-                {{ __('Category') }}
+            <x-responsive-nav-link href="{{ route('admin.discount') }}" :active="request()->routeIs('admin.discount')">
+                {{ __('Discount') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="admin/user" :active=" request()->routeIs('admin.user')">
-                {{ __('User') }}
+            <x-responsive-nav-link href="{{ route('admin.event') }}" :active=" request()->routeIs('admin.event')">
+                {{ __('Acara') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link href="{{ route('admin.visual') }}" :active=" request()->routeIs('admin.visual')">
+                {{ __('Visualisasi') }}
             </x-responsive-nav-link>
             @endif
 
@@ -162,12 +175,12 @@
             {{-- user links --}}
 
             @if (Auth::user()->usertype == 'user')
-            <x-responsive-nav-link href="book" :active=" request()->routeIs('user.book')">
-                {{ __('Book') }}
+            <x-responsive-nav-link href="ticket" :active=" request()->routeIs('user.ticket')">
+                {{ __('Tiket') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="favorite" :active=" request()->routeIs('user.favorite')">
-                {{ __('Favorite') }}
+            <x-responsive-nav-link href="event" :active=" request()->routeIs('user.event')">
+                {{ __('Event') }}
             </x-responsive-nav-link>
 
             <x-responsive-nav-link href="article" :active=" request()->routeIs('user.article')">
@@ -178,9 +191,6 @@
                 {{ __('Faq') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="profile" :active=" request()->routeIs('profile.edit')">
-                {{ __('My Profile') }}
-            </x-responsive-nav-link>
             @endif
         </div>
 

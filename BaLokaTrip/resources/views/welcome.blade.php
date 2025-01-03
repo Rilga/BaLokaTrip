@@ -109,7 +109,7 @@
 @section('content')
 
 <!-- Carousel -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide nightowl-daylight" data-bs-ride="carousel" >
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -117,21 +117,21 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{{ asset('images/c11.png') }}" class="d-block w-100" alt="First Slide">
+            <img src="{{ asset('images/ca1.jpeg') }}" class="d-block w-100" alt="First Slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Your world of joy</h5>
                 <p>Wisata domestik sampai ujung Bandung, temukan semua aktivitas yang bisa membuat bahagia</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('images/c22.png') }}" class="d-block w-100" alt="Second Slide">
+            <img src="{{ asset('images/ca5.jpeg') }}" class="d-block w-100" alt="Second Slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Your world of joy</h5>
                 <p>Wisata domestik sampai ujung Bandung, temukan semua aktivitas yang bisa membuat bahagia</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="{{ asset('images/c33.png') }}" class="d-block w-100" alt="Third Slide">
+            <img src="{{ asset('images/ca3.jpeg') }}" class="d-block w-100" alt="Third Slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Your world of joy</h5>
                 <p>Wisata domestik sampai ujung Bandung, temukan semua aktivitas yang bisa membuat bahagia</p>
@@ -151,29 +151,50 @@
 <br><br><br><br>
 
     <!-- Three columns of text below the carousel -->
-    <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
-        <h2 style="font-size: 40px; font-weight: bold; margin-bottom: 40px; text-align: center;">Keuntungan menggunakan BaLoka</h2>
-        <br>
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-            <div style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 200px; background-color: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s; text-align: left;">
-                <img src="{{ asset('images/plane.png') }}" alt="Ikon 1" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Temukan kegembiraan</h3>
-                <p style="font-size: 14px; color: #555555;">Tersedia sekitar lima ratus ribu destinasi wisata yang menarik bagimu.</p>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 40px; text-align: center; font-family: 'Poppins', sans-serif;">
+        <h2 style="font-size: 42px; font-weight: 600; color: #333; margin-bottom: 50px; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);">
+            Keuntungan Menggunakan BaLoka
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <!-- Card 1 -->
+            <div style="background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transform: perspective(800px) rotateX(0deg); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='perspective(800px) rotateX(-3deg) translateY(-10px)'; this.style.boxShadow='0 12px 18px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='perspective(800px) rotateX(0deg)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.1)';">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(99, 164, 255, 0.1); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;" class="nightowl-daylight">
+                    <img src="{{ asset('images/plane.png') }}" alt="Ikon 1" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222;">Temukan Kegembiraan</h3>
+                <p style="font-size: 14px; color: #555;">Tersedia sekitar lima ratus ribu destinasi wisata yang menarik bagimu.</p>
             </div>
-            <div style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 200px; background-color: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s; text-align: left;">
-                <img src="{{ asset('images/car.png') }}" alt="Ikon 2" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Nikmati penawaran dan diskon</h3>
-                <p style="font-size: 14px; color: #555555;">Aktivitas berkualitas. Harga terbaik. Plus, BaLoCash untuk berhemat.</p>
+            <!-- Card 2 -->
+            <div style="background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transform: perspective(800px) rotateX(0deg); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='perspective(800px) rotateX(-3deg) translateY(-10px)'; this.style.boxShadow='0 12px 18px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='perspective(800px) rotateX(0deg)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.1)';">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(255, 193, 7, 0.1); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;" class="nightowl-daylight">
+                    <img src="{{ asset('images/car.png') }}" alt="Ikon 2" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222;">Nikmati Diskon</h3>
+                <p style="font-size: 14px; color: #555;">Aktivitas berkualitas, harga terbaik, plus, BaLoCash untuk hemat lebih banyak.</p>
             </div>
-            <div style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 200px; background-color: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s; text-align: left;">
-                <img src="{{ asset('images/motor.png') }}" alt="Ikon 3" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Eksplor sana sini makin mudah</h3>
-                <p style="font-size: 14px; color: #555555;">Pesan last minute, akses antrean khusus, dan pembatalan gratis. Eksplor sana sini lebih mudah.</p>
+            <!-- Card 3 -->
+            <div style="background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transform: perspective(800px) rotateX(0deg); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='perspective(800px) rotateX(-3deg) translateY(-10px)'; this.style.boxShadow='0 12px 18px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='perspective(800px) rotateX(0deg)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.1)';">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(76, 175, 80, 0.1); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;" class="nightowl-daylight">
+                    <img src="{{ asset('images/motor.png') }}" alt="Ikon 3" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222;">Eksplor Lebih Mudah</h3>
+                <p style="font-size: 14px; color: #555;">Pesan last minute, akses antrean khusus, dan pembatalan gratis.</p>
             </div>
-            <div style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 200px; background-color: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: transform 0.3s; text-align: left;">
-                <img src="{{ asset('images/ship.png') }}" alt="Ikon 4" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Dapat dipercaya</h3>
-                <p style="font-size: 14px; color: #555555;">Baca ulasan dan dapatkan layanan pelanggan terpercaya. Kami selalu hadir di setiap langkahmu.</p>
+            <!-- Card 4 -->
+            <div style="background: #ffffff; border-radius: 16px; padding: 25px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); transform: perspective(800px) rotateX(0deg); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;"
+                onmouseover="this.style.transform='perspective(800px) rotateX(-3deg) translateY(-10px)'; this.style.boxShadow='0 12px 18px rgba(0, 0, 0, 0.2)';"
+                onmouseout="this.style.transform='perspective(800px) rotateX(0deg)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.1)';">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(156, 39, 176, 0.1); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;" class="nightowl-daylight">
+                    <img src="{{ asset('images/ship.png') }}" alt="Ikon 4" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #222;">Dapat Dipercaya</h3>
+                <p style="font-size: 14px; color: #555;">Baca ulasan terpercaya dan layanan pelanggan yang selalu siap membantu.</p>
             </div>
         </div>
     </div>
@@ -189,18 +210,13 @@
         d="M 0,500 C 0,500 0,250 0,250 C 39.19044912633164,235.8437838695181 78.38089825266329,221.68756773903618 135,211 C 191.6191017473367,200.31243226096382 265.66685611567846,193.09351291337336 312,208 C 358.33314388432154,222.90648708662664 376.951677284623,259.93838060747044 415,277 C 453.048322715377,294.06161939252956 510.5264347458299,291.1529646567448 566,286 C 621.4735652541701,280.8470353432552 674.9425837320575,273.44976076555025 726,273 C 777.0574162679425,272.55023923444975 825.7032303259402,279.0479922810542 874,269 C 922.2967696740598,258.9520077189458 970.2444949641811,232.35827011023295 1017,239 C 1063.755505035819,245.64172988976705 1109.3187898173358,285.5189272780142 1149,291 C 1188.6812101826642,296.4810727219858 1222.4803457664755,267.5660207777102 1270,255 C 1317.5196542335245,242.4339792222898 1378.7598271167622,246.2169896111449 1440,250 C 1440,250 1440,500 1440,500 Z"
         stroke="none" stroke-width="0" fill="#0d47a1" fill-opacity="0.53"
         class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
-    <path
-        d="M 0,500 C 0,500 0,375 0,375 C 41.794403764307816,382.2990166274551 83.58880752861563,389.59803325491026 135,386 C 186.41119247138437,382.40196674508974 247.43917364984532,367.9068836078141 292,377 C 336.5608263501547,386.0931163921859 364.65449787200305,418.7744323138333 417,418 C 469.34550212799695,417.2255676861667 545.9428348621427,382.9953871368527 594,370 C 642.0571651378573,357.0046128631473 661.5741626794259,365.24401913875596 701,370 C 740.4258373205741,374.75598086124404 799.7605144201538,376.0285363081234 852,375 C 904.2394855798462,373.9714636918766 949.3837796399589,370.6418356287504 996,368 C 1042.616220360041,365.3581643712496 1090.704367020011,363.4041211768749 1143,355 C 1195.295632979989,346.5958788231251 1251.798752279997,331.74167966375 1302,334 C 1352.201247720003,336.25832033625 1396.1006238600016,355.629160168125 1440,375 C 1440,375 1440,500 1440,500 Z"
-        stroke="none" stroke-width="0" fill="#0d47a1" fill-opacity="1"
-        class="transition-all duration-300 ease-in-out delay-150 path-2"></path>
 </svg>
-
-
+<br><br><br>
 <!-- Features Section -->
-<section style="background-color: #0d47a1; margin-top: -70px; margin-bottom: -70px; ">
-    <br><br><br><br>
+<section style="background-color: #517BBB; margin-top: -72px; margin-bottom: -72px; ">
+    <br><br><br>
     <div class="rond" style="background-color: rgba(255, 255, 255, 1); border-radius: 50px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 75%; margin: 0 auto; padding: 20px;">
-        <div class="container" >
+        <div class="container " >
             <br>
             <h2 style="font-size: 3rem; text-align: center; font-weight: bold; text-shadow: 2px 2px 5px rgba(0,0,0,0.2); ">Unveiling the Best Travel Spots in Bandung</h2>
             <hr class="featurette-divider">
@@ -214,7 +230,7 @@
                     <br> <p><b>- @sitinurhayati</b></p>
                 </div>
                 <div class="col-md-5">
-                    <figure class="image-container">
+                    <figure class="image-container nightowl-daylight">
                         <img src="{{ asset('images/s1.jpg') }}" class="featurette-image img-fluid mx-auto rounded" alt="Feature 1" style="box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
                         <figcaption class="text-center mt-2">Riung Gunung</figcaption>
                     </figure>
@@ -232,7 +248,7 @@
                     <br> <p><b>- @Gilangmuh</b></p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <figure class="image-container">
+                    <figure class="image-container nightowl-daylight">
                         <img src="{{ asset('images/s2.jpg') }}" class="featurette-image img-fluid mx-auto rounded" alt="Feature 2" style="box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
                         <figcaption class="text-center mt-2">Tebing Keraton</figcaption>
                     </figure>
@@ -250,7 +266,7 @@
                     <br> <p><b>- @asephida</b></p>
                 </div>
                 <div class="col-md-5">
-                    <figure class="image-container">
+                    <figure class="image-container nightowl-daylight">
                         <img src="{{ asset('images/s3.jpg') }}" class="featurette-image img-fluid mx-auto rounded" alt="Feature 3" style="box-shadow: 0px 4px 10px rgba(0,0,0,0.2); ">
                         <figcaption class="text-center mt-2">Cikahuripan Lembang</figcaption>
                     </figure>
@@ -262,7 +278,7 @@
     </div>
     <br><br><br><br>
 </section>
-
+<br><br><br>
 <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 490" xmlns="http://www.w3.org/2000/svg"
     class="transition duration-300 ease-in-out delay-150">
     <path
@@ -273,22 +289,19 @@
         d="M 0,500 C 0,500 0,250 0,250 C 58.1485236194454,260.90693647730575 116.2970472388908,271.81387295461155 158,278 C 199.7029527611092,284.18612704538845 224.96033466388224,285.6514446588596 272,289 C 319.03966533611776,292.3485553411404 387.8616141055804,297.58034840995003 448,294 C 508.1383858944196,290.41965159004997 559.5932089137963,278.0271617013402 597,260 C 634.4067910862037,241.97283829865975 657.7655502392345,218.311004784689 707,206 C 756.2344497607655,193.688995215311 831.344590129266,192.72881915990376 890,216 C 948.655409870734,239.27118084009624 990.856089243702,286.7737185756959 1034,293 C 1077.143910756298,299.2262814243041 1121.2310528959265,264.1763065373126 1171,259 C 1220.7689471040735,253.82369346268737 1276.2196991725925,278.5210552750535 1322,282 C 1367.7803008274075,285.4789447249465 1403.8901504137039,267.73947236247324 1440,250 C 1440,250 1440,500 1440,500 Z"
         stroke="none" stroke-width="0" fill="#0d47a1" fill-opacity="0.53"
         class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 250)"></path>
-    <path
-        d="M 0,500 C 0,500 0,375 0,375 C 59.600214121441226,358.10191916254723 119.20042824288245,341.2038383250945 168,347 C 216.79957175711755,352.7961616749055 254.79850114991143,381.2865658621692 303,381 C 351.20149885008857,380.7134341378308 409.6055671574718,351.6498982262286 457,347 C 504.3944328425282,342.3501017737714 540.7792302202014,362.11384123291657 579,359 C 617.2207697797986,355.88615876708343 657.2775119617226,329.89473684210526 704,333 C 750.7224880382774,336.10526315789474 804.1107219329086,368.30721139866245 856,390 C 907.8892780670914,411.69278860133755 958.2796003066433,422.87641756324507 1001,410 C 1043.7203996933567,397.12358243675493 1078.7708768405191,360.1871183483571 1134,341 C 1189.2291231594809,321.8128816516429 1264.6368923312805,320.3751090433266 1319,329 C 1373.3631076687195,337.6248909566734 1406.6815538343599,356.3124454783367 1440,375 C 1440,375 1440,500 1440,500 Z"
-        stroke="none" stroke-width="0" fill="#0d47a1" fill-opacity="1"
-        class="transition-all duration-300 ease-in-out delay-150 path-2" transform="rotate(-180 720 250)"></path>
+ 
 </svg>
 
-<br><br>
+<br><br><br>
 
 <h2 style="font-size: 3rem; text-align: center; font-weight: bold;">All Destination in Bandung!</h2>
-<div id="map" style="height: 300px; margin: 50px auto; width: 70%; border-radius: 15px;"></div>
+<div class="nightowl-daylight" id="map" style="height: 300px; margin: 50px auto; width: 70%; border-radius: 15px;"></div>
 
 
 @endsection
 
 @section('script')
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {

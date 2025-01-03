@@ -2,7 +2,7 @@
 <x-app-layout>
     <div class="container py-5">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 nightowl-daylight">
                 <img src="{{ asset('storage/images/product/' . basename($product->image)) }}" 
                     alt="{{ $product->name }}" 
                     class="img-fluid rounded shadow">

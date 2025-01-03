@@ -24,6 +24,12 @@ class Order extends Model
 
     public function ticket()
     {
-        return $this->belongsTo(Ticket::class);
+        return $this->belongsTo(Ticket::class, 'ticket_id');
     }
+
+    public function product()
+    {
+        return $this->hasManyThrough(Product::class, Ticket::class);  // Relasi ke Product melalui Ticket
+    }
+    
 }

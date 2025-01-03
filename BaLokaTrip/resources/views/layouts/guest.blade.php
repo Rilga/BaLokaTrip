@@ -11,7 +11,14 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        
+        <style>
+            body {
+                filter: invert(95%) hue-rotate(180deg);
+            }
+            img, video, iframe {
+                filter: none !important;
+            }
+        </style>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -20,7 +27,7 @@
         @include('layouts.nav')
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <a href="/">
+                <a href="/" class="nightowl-daylight">
                     <img src="{{ asset('images/logo.svg') }}" class="w-20 h-20 fill-current" />
                 </a>
             </div>
@@ -29,5 +36,15 @@
                 {{ $slot }}
             </div>
         </div>
+        <script type="module" src="/nightowl.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script>
+        <script type="module">
+            import { createNightowl } from '@bufferhead/nightowl'
+        
+            createNightowl({
+                defaultMode: 'dark',
+                toggleButtonMode: 'newState'
+            })
+        </script>
     </body>
 </html>

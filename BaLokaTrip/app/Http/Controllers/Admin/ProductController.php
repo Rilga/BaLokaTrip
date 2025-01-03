@@ -35,12 +35,8 @@ class ProductController extends Controller
     \Log::info("Products found: " . $products->total());
 
     // Kirim data produk ke view
+
     return view('admin.product', compact('products'));
-    }
-    public function index2()
-    {
-        $products = Product::all();
-        return view('dashboard', compact('products'));
     }
 
     public function index3(Request $request)

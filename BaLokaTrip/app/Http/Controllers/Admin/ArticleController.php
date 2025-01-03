@@ -5,9 +5,23 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ArticleController extends Controller
 {
+    public function downloadPDF($id)
+    {
+        $article = Article::findOrFail($id);
+
+        // Pastikan URL gambar dapat diakses
+        $article->gambar = $article->gambar ? asset('storage/' . $article->gambar) : null;
+
+        $pdf = Pdf::loadView('pdf.article', compact('article'))
+            ->setPaper('a4', 'portrait');
+        return $pdf->download($article->judul . '.pdf');
+    }
+
+
     public function index()
     {
         $articles = Article::all();
