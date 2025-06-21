@@ -1,3 +1,4 @@
+# BaLokaTrip
 BaLokaTrip adalah sebuah website yang berfokus pada promosi dan informasi wisata lokal di wilayah Bandung. Website ini dirancang untuk memudahkan wisatawan dalam menemukan tempat wisata menarik, membeli tiket, hingga mengeksplorasi informasi penting seputar pariwisata Bandung dengan cara yang interaktif, aman, dan informatif. serta melakukan transaksi secara online dengan aman dan nyaman.
 
 Fitur Utama :
